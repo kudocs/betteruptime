@@ -1,17 +1,15 @@
 # frozen_string_literal: true
 
 module Betteruptime
-  class JobScheduler
-    def initialize; end
-
-    def schedule
+  module JobScheduler
+    def self.schedule
       if defined?(Sidekiq)
         Betteruptime.configuration.jobs.each do |c|
-          Sidekiq.set_schedule(c.name.to_s.downcase, 
+          Sidekiq.set_schedule("heartbeat_#{c.name.to_s.downcase}",
             { 
               cron: '0 */5 * * * *',
               class: 'Betteruptime::GenericJob',
-              args: c.block
+              args: [c.name, c.block.to_source]
             }
           )
         end

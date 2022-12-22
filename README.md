@@ -6,6 +6,7 @@ A simple way to configure betteruptime healthcheck in Rails applications
 
 ```
 Betteruptime.configure do |config|
+  config.api_token = 'xxxxxxx'
   config.verbose = false
 
   # -- Checks --

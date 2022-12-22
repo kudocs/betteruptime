@@ -2,7 +2,7 @@
 
 module Betteruptime
   class Configuration
-    attr_accessor :method, :jobs
+    attr_accessor :method, :jobs, :api_token
 
     def initialize
       clear!
