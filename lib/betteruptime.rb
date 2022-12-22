@@ -14,15 +14,7 @@ module Betteruptime
     @configuration ||= Configuration.new
   end
 
-  def check
-    Checker.new.tap(&:check)
-  end
-
-  def custom!(controller)
-    configuration.custom.call(controller, check)
-  end
-
-  def custom?
-    configuration.custom
+  def schedule!
+    JobScheduler.new.tap(&:check)
   end
 end

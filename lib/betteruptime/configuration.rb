@@ -2,18 +2,18 @@
 
 module Betteruptime
   class Configuration
-    attr_accessor :method, :checks
+    attr_accessor :method, :jobs
 
     def initialize
       clear!
     end
 
-    def add_check(name, block)
-      @checks << Check.new(name, block)
+    def add_job(name, block)
+      @jobs << Job.new(name, block)
     end
 
     def clear!
-      @checks = []
+      @jobs = []
     end
   end
 end
