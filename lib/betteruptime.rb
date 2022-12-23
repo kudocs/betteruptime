@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 require 'betteruptime/configuration'
+
+require 'betteruptime/api'
 require 'betteruptime/generic_job'
 require 'betteruptime/job'
 require 'betteruptime/job_scheduler'
 require 'betteruptime/version'
 
 module Betteruptime
-  API_HEARTBEAT_URL = 'https://betteruptime.com/api/v2/heartbeats'
-
   module_function
 
   def configure
