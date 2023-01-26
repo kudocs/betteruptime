@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Betteruptime
+  # job
   class Job
     attr_accessor :name, :block
 

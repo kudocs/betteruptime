@@ -1,8 +1,11 @@
-# [Betteruptime]
+![Betteruptime](https://github.com/kudocs/coverage/blob/main/betteruptime/master/coverage/badge.svg)
+
+# Betteruptime
 
 A simple way to configure betteruptime healthcheck in Rails applications
 
-# frozen_string_literal: true
+**How it works**
+
 
 ```
 Betteruptime.configure do |config|

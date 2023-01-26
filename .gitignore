@@ -1,1 +1,8 @@
+/.bundle/
+/.idea/
+/Gemfile.lock
+/coverage/
+
+.env
+.ruby-version
 .DS_Store
