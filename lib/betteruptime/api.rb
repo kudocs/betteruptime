@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 module Betteruptime
+  # api connection
   class Api
-    HEARTBEAT_URL = 'https://betteruptime.com/api/v2/heartbeats'
-
     attr_accessor :name
 
     def initialize(name)
@@ -15,7 +14,7 @@ module Betteruptime
         heartbeat.dig('attributes', 'name') == name
       end&.first&.dig('attributes', 'url')
 
-      ping_url ? URI.open(ping_url).read : nil
+      ping_url ? URI.parse(ping_url).read : nil
     end
 
     private
@@ -23,11 +22,11 @@ module Betteruptime
     def heartbeats
       JSON.parse(
         URI.open(
-          HEARTBEAT_URL,
+          'https://betteruptime.com/api/v2/heartbeats',
           'Authorization' => "Bearer #{Betteruptime.configuration.api_token}"
         ).read
       ).try(:[], 'data')
-    rescue
+    rescue JSON::ParserError, SocketError, OpenURI::HTTPError
       []
     end
   end

@@ -1,7 +1,10 @@
 # frozen_string_literal: true
+
 require 'sourcify'
 
+# rubocop:disable Security/Eval, Lint/RescueException
 module Betteruptime
+  # generic job
   class GenericJob < ActiveJob::Base
     def perform(name, block)
       eval(block).call
@@ -12,3 +15,4 @@ module Betteruptime
     end
   end
 end
+# rubocop:enable Security/Eval, Lint/RescueException

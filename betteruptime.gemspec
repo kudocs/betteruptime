@@ -25,10 +25,11 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sourcify'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'danger-rcov', '~> 3.0.0'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'rubocop', '>= 0.74.0'
   spec.add_development_dependency 'rubocop-performance', '>= 1.4.1'
-  spec.add_development_dependency 'simplecov', '~> 0.17.1'
-  spec.add_development_dependency 'simplecov-console', '>= 0.5.0'
+  spec.add_development_dependency 'simplecov-json'
+  spec.add_development_dependency 'simplecov-shield-json'
 end

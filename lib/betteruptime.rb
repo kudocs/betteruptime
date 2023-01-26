@@ -8,6 +8,7 @@ require 'betteruptime/job'
 require 'betteruptime/job_scheduler'
 require 'betteruptime/version'
 
+# betteruptime helper
 module Betteruptime
   module_function
 

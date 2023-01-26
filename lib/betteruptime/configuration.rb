@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Betteruptime
+  # configuration class
   class Configuration
     attr_accessor :method, :jobs, :api_token
 
