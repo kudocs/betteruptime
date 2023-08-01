@@ -30,7 +30,7 @@ jobs:
     - name: Push coverage report
       uses: kudocs/copy_file_to_another_repo_action@main
       with:
-        source_file: 'coverage/coverage.json,coverage/badge.svg'
+        source_file: 'coverage/coverage.json'
         destination_repo: 'kudocs/coverage'
         destination_folder: 'betteruptime/${{github.event.number || github.head_ref || github.ref_name }}'
         user_email: 'bot@kudocs.co.uk'
