@@ -22,7 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'actionpack'
   spec.add_dependency 'railties'
   spec.add_dependency 'sidekiq-scheduler', '>= 5.0.0.beta2'
-  spec.add_dependency 'sourcify'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'danger-rcov', '~> 3.0.0'
