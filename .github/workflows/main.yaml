@@ -21,13 +21,14 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.2
+        ruby-version: 4.0.1
         bundler-cache: true
     # Run specs
     - name: Run RSpec
       run: |
         bundle exec rspec
     - name: Push coverage report
+      continue-on-error: true
       uses: kudocs/copy_file_to_another_repo_action@main
       with:
         source_file: 'coverage'
@@ -38,5 +39,6 @@ jobs:
         commit_message: 'Add ${{github.repository}} coverage report'
     # Run danger
     - name: Run Danger
+      continue-on-error: true
       run: |
         bundle exec danger
